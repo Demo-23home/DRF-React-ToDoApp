@@ -1,22 +1,23 @@
 import React from "react";
 import Header from "./components/Header";
 import NotesListPage from "./pages/NotesListPage";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NotePage from "./pages/NotePage";
-import './App.css' 
-
+import "./App.css";
 
 const App = () => {
   return (
     <Router>
-      <div className="App">
+    <div className="container dark">
+      <div className="app">
         <Header />
-        <Routes>
-          <Route path="/" element={<NotesListPage />} />
-          <Route path="/note/:id" element={<NotePage />} />
-        </Routes>
+        <Switch>
+          <Route path="/" exact component={NotesListPage} />
+          <Route path="/note/:id" component={NotePage} />
+        </Switch>
       </div>
-    </Router>
+    </div>
+  </Router>
   );
 };
 
