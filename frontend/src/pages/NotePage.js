@@ -68,7 +68,7 @@ const NotePage = () => {
     else if (id !== 'new') {
       updateNote();
     }
-    else if (id == 'new' && note !== null) {
+    else if (id == 'new' && note.body !== null) {
       createNote()
     }
     history.push("/");
